@@ -1,1 +1,9 @@
-@import './partials/typography.scss';
+@import './partials/_variables.scss';
+@import './partials/_global.scss';
+@import './partials/_typography.scss';
+@import './partials/_colors.scss';
+@import './partials/_navigation.scss';
+
+@import'./components/_header.scss';
+@import'./components/_main.scss';
+@import'./components/_footer.scss';

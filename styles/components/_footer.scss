@@ -1,0 +1,31 @@
+footer{
+    @media screen and (min-width: 835px){
+        background-color: $secondary-color;
+        background-image: url(/images/main/background2.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center; 
+    }
+
+    background-color: $secondary-color;
+
+    .background-footer{
+        background-color: rgba(139, 198, 63, 0.7);
+    }
+
+    .main-products-btn{
+        background-color: $primary-color;
+        padding: 5px 20px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: ease-in-out .2s;
+        margin: 0 0 2em;
+
+        &:hover{
+            letter-spacing: 3px;
+            padding: 5px 17px;
+        }
+    }
+}
+

@@ -4,14 +4,119 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/public/styles.css">
     <link rel="stylesheet" href="styles/output.css">
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/ceb7611df8.js" crossorigin="anonymous"></script>
+    <title>78 Racing School</title>
 </head>
 <body>
-    <div class="content-wrap">
-        <nav>
-            
-        </nav>
+    <div class="background-hero"></div>
+    <div class="content-wrap ml-auto mr-auto">
+        <header class="flex justify-center">
+            <nav class="nav p-5">
+                <ul class="flex justify-center">
+                    <li class="line p-2 mr-1"><a href="#" class="active">Home</a></li>
+                    <li class="line p-2 ml-1"><a href="#" class="">Products</a></li> 
+                </ul>
+            </nav>
+            <!--login, user-->
+            <div class="profile absolute top-5 right-5">
+                <img src="./images/placeholder/profile-placeholder.png" class="profile-img" alt="profile image">
+                <span class="text-center" id="userButton">Login</span>
+            </div>
+            <div class="punchline">
+                <h1 class="text-center">78 Racing School</h1>
+                <h4 class="text-center">"Perfoming when it counts"</h4>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- <div class="arrow2"></div> -->
+        </header>
+        <main>
+            <h2 class="text-center">Feautured</h2>
+            <div class="flex flex-wrap sm:flex-row justify-center mt-14 ml-14 sm:ml-2 mr-20 sm:mr-2">
+            <!--JSON input goes below here, cards example-->
+                <div class="card mr-1 ml-1">
+                    <div class="card-image-container">
+                        <a href="#">
+                            <img src="./images/frontexposelmp2.png" alt="example">
+                            <div class="img-overlay">Select</div>
+                        </a>
+                    </div>
+                    <h4>Product Name</h4>
+                    <div class="detail flex">
+                        <p class="flex-1">Price</p>
+                        <i class="fa fa-flag mr-4"></i>
+                        <i class="far fa-heart mr-1"></i>
+                    </div>
+                </div>
+                <div class="card mr-1 ml-1">
+                    <div class="card-image-container">
+                        <img src="./images/muriel2020indyPro.png" alt="example">
+                        <div class="img-overlay">Select</div>
+                    </div>
+                    <h4>Product Name</h4>
+                    <div class="detail flex">
+                        <p class="flex-1">Price</p>
+                        <i class="fa fa-flag mr-4"></i>
+                        <i class="far fa-heart mr-1"></i>
+                    </div>
+                </div>
+                <div class="card mr-1 ml-1">
+                    <div class="card-image-container">
+                        <img src="./images/PSR.png" alt="example">
+                        <div class="img-overlay">Select</div>
+                    </div>
+                    <h4>Product Name</h4>
+                    <div class="detail flex">
+                        <p class="flex-1">Price</p>
+                        <i class="fa fa-flag mr-4"></i>
+                        <i class="far fa-heart mr-1"></i>
+                    </div>
+                </div>
+                <div class="card mr-1 ml-1">
+                    <div class="card-image-container">
+                        <img src="./images/keyMasiaRearRSR.png" alt="example">
+                        <div class="img-overlay">Select</div>
+                    </div>
+                    <h4>Product Name</h4>
+                    <div class="detail flex">
+                        <p class="flex-1">Price</p>
+                        <i class="fa fa-flag mr-4"></i>
+                        <i class="far fa-heart mr-1"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
+    <footer>
+        <div class="flex justify-center">
+            <div class="lg:w-1/2 md:w-full ml-4 mr-4 max-w-prose background-footer">
+                    <h3 class="text-center lg:text-justify">About Us</h3>
+                    <p class="lg:max-w-sm ">Our coaches have long experience in both real and
+                        Virtual, and have put together only the best of the best
+                        To give you the most effective training on the market.
+                    </p>
+                    <div class="relative">
+                        <p class="lg:max-w-sm">
+                            78 Racing was founded by Glenn Key who wanted
+                            To share his long profound racing journey and help
+                            Those who are new to the sport. Key’s ambition is to
+                            Give newcomers a handcrafted guideline to help 
+                            Speed up the learning process. Together with
+                            78 Racing School you can expect nothing less than
+                            Premium service.
+                        </p>
+                        <a href="#">
+                            <button class="main-products-btn">Products</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden lg:block w-1/4"></div>
+            </div>
+    </footer>
 </body>
 </html>

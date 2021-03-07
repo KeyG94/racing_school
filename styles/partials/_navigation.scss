@@ -1,0 +1,35 @@
+nav{
+
+    li{
+        transition: all ease-in-out .5s;
+    }
+
+    .line{
+        border: none;
+        position: relative;
+
+        .active{
+            border-bottom: 1px solid $secondary-color;
+        }
+
+        &:hover{
+            border:none;
+        }
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 3px;
+            left: 50%;
+            bottom: 5px;
+            background-color: $secondary-color;
+            transition: all ease-in-out .4s;
+          }
+
+        &:hover::after{
+            width: 100%;
+            left: 0;
+          }
+    }
+}
