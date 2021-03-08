@@ -2,15 +2,16 @@ nav{
 
     li{
         transition: all ease-in-out .5s;
+        letter-spacing: 1px;
+    }
+
+    .active{
+        color: $secondary-color;
     }
 
     .line{
         border: none;
         position: relative;
-
-        .active{
-            border-bottom: 1px solid $secondary-color;
-        }
 
         &:hover{
             border:none;

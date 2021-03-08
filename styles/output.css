@@ -67,13 +67,14 @@ h4 {
 
 nav li {
   transition: all ease-in-out 0.5s;
+  letter-spacing: 1px;
+}
+nav .active {
+  color: #8bc63f;
 }
 nav .line {
   border: none;
   position: relative;
-}
-nav .line .active {
-  border-bottom: 1px solid #8bc63f;
 }
 nav .line:hover {
   border: none;
