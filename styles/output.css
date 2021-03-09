@@ -170,11 +170,25 @@ main {
   margin: 2em 5px;
 }
 
-.card-image-container {
+.product-card {
+  width: 220px;
+  overflow: hidden;
+}
+
+.product-card, .card :is(h4) {
+  color: white;
+  margin-top: 0.5em;
+}
+
+.card-image-container, .product-image-container {
   position: relative;
   height: 190px;
   border-bottom: 1px solid #8bc63f;
   overflow: hidden;
+}
+
+.product-image-container {
+  height: 120px;
 }
 
 .card img {
@@ -199,7 +213,7 @@ main {
   text-align: center;
 }
 
-.card-image-container:hover .img-overlay {
+.card-image-container:hover .img-overlay, .product-image-container:hover .img-overlay {
   opacity: 1;
   height: 75px;
   cursor: pointer;
@@ -237,6 +251,18 @@ footer .main-products-btn {
 footer .main-products-btn:hover {
   letter-spacing: 3px;
   padding: 5px 17px;
+}
+
+.search-box :is(input) {
+  background: none;
+  padding: 0 7px;
+  margin-top: 2em;
+  width: 250px;
+  font-size: 20px;
+  border-bottom: 2px solid #8bc63f;
+}
+.search-box :is(input):active, .search-box :is(input):hover, .search-box :is(input):focus {
+  outline: none;
 }
 
 /*# sourceMappingURL=output.css.map */
