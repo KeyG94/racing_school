@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/public/styles.css">
+    <link rel="stylesheet" href="styles/output.css">
+    <script src="https://kit.fontawesome.com/ceb7611df8.js" crossorigin="anonymous"></script>
+    <title>${productdetail} | 78 Racing School</title>
+</head>
+<body>
+    <div class="content-wrap ml-auto mr-auto">
+        <!--Unique height limit because of the global style-->
+        <header class="flex justify-center max-h-32">
+            <!--Navigation-->
+            <nav class="nav p-5 relative">
+                <ul class="flex justify-center">
+                    <li class="line p-2 mr-1"><a href="./index.html">Home</a></li>
+                    <li class="line p-2 ml-1"><a href="#" class="active">Products</a></li> 
+                </ul>
+            </nav>
+            <!--login, user-->
+            <div class="profile absolute top-5 right-5">
+                <img src="./images/placeholder/profile-placeholder.png" class="profile-img" alt="profile image">
+                <span class="text-center" id="userButton">Login</span>
+            </div>
+        </header>
+        <main class="flex justify-center flex-wrap ml-2 mr-2 mb-10">
+            <section class="image w-full md:w-1/2 md:pr-2">
+                <div class="legend-nav">
+                    <ul class="flex">
+                        <a href="./index.html"><li class="mr-1 text-gray-400">home </li></a>
+                        <a href="./products.html"><li class="mr-1 text-gray-400">- products -</li></a>
+                        <a href="#"><li class="text-gray-400">${productDetail}</li></a>
+                    </ul>
+                </div>
+                <img src="./images/coaching/SunlightDusk_FinishLine.png" class="w-full" alt="template">
+            </section>
+            <section class="details w-full md:w-1/2 md:pl-2">
+                <div class="title">
+                    <h3>${ProductName} - ${packageDetail}</h3>
+                    <h4>159,-</h4>
+                </div>
+                <div>
+                    <h5>Details</h5>
+                    <p class="">
+                        ${productDetails} The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, 
+                        <span class="text-green">flick quartz, vex nymphs.</span>
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                    </p>
+                </div>
+                <div class="flex">
+                    <button class="btn btn-green sm:w-full md:w-48">Add to basket</button>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
