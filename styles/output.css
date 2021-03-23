@@ -328,19 +328,22 @@ footer .main-products-btn:hover {
   z-index: 1;
   transition: linear 0.2s;
 }
-.form-add-list .upload-btn::after {
-  content: "Choose file";
+.form-add-list #img::-webkit-file-upload-button {
+  width: 50%;
+  background-color: #333333;
+  color: white;
+  border: none;
+  padding: 8px;
+  transition: linear 0.2s;
 }
-.form-add-list #img {
-  opacity: 0;
-  z-index: 2;
-  position: absolute;
-  right: 0;
-  width: 290px;
-  border: 1px solid black;
-}
-.form-add-list #img:hover {
+.form-add-list #img::-webkit-file-upload-button:hover {
   cursor: pointer;
+  background-color: white;
+  color: #333333;
+  letter-spacing: 1px;
+}
+.form-add-list #img::-webkit-file-upload-button:focus {
+  outline: none;
 }
 
 .button-container #update {
