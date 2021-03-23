@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/public/styles.css">
+    <link rel="stylesheet" href="./styles/output.css">
+    <script src="https://kit.fontawesome.com/ceb7611df8.js" crossorigin="anonymous"></script>
+    <title>Admin Panel</title>
+</head>
+<body class="bg-gray-100 text-gray-800 max-w-lg flex flex-col m-auto">
+    <div class="admin-navigation pt-2">
+        <a href="./index.html"><li>Back</li></a>
+        <a href="#" id="logout"><li>Logout</li></a>
+    </div>
+    <div id="admin-nav"></div>
+    <header class="flex justify-center admin-header">
+        <h1>Admin Panel</h1>
+    </header>
+    <nav>
+        <a href="./add.html" id="add-new-object">Add new +</a>
+    </nav>
+    <div class="card-list-container flex justify-center mb-10">
+        <div id="error"></div>
+        <table class="table-fixed w-full mt-2 pl-2 pr-2">
+            <thead>
+              <tr>
+                <th class="w-1/12">#ID</th>
+                <th class="w-1/3">Title</th>
+                <th class="w-1/12">Price</th>
+                <th class="w-1/12">img</th>
+                <th class="w-1/12">edit</th>
+              </tr>
+            </thead>
+            <tbody class="root-body">
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                  <td>${title.id}</td>
+                  <td>${title.title}</td>
+                  <td>${title.price}</td>
+                  <td>${title.image}</td>
+                  <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>  
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>2</td>
+                <td>Personal Coaching</td>
+                <td>359</td>
+                <td>true</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>3</td>
+                <td>Setup pack</td>
+                <td>299</td>
+                <td>false</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>4</td>
+                <td>Race Pack</td>
+                <td>149</td>
+                <td>true</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>5</td>
+                <td>Personal Coaching</td>
+                <td>359</td>
+                <td>true</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>6</td>
+                <td>Setup pack</td>
+                <td>299</td>
+                <td>false</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>7</td>
+                <td>Race Pack</td>
+                <td>149</td>
+                <td>true</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>8</td>
+                <td>Personal Coaching</td>
+                <td>359</td>
+                <td>true</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>9</td>
+                <td>Setup pack</td>
+                <td>299</td>
+                <td>false</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>10</td>
+                <td>Setup pack</td>
+                <td>299</td>
+                <td>false</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>11</td>
+                <td>Race Pack</td>
+                <td>149</td>
+                <td>true</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>12</td>
+                <td>Personal Coaching</td>
+                <td>359</td>
+                <td>true</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+              <tr class="hover:bg-gray-500 hover:text-gray-100">
+                <td>13</td>
+                <td>Setup pack</td>
+                <td>299</td>
+                <td>false</td>
+                <td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <script src="./script/admin/admin.js" type="module"></script>
+</body>
+</html>

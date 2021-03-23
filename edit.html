@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/public/styles.css">
+    <link rel="stylesheet" href="./styles/output.css">
+    <script src="https://kit.fontawesome.com/ceb7611df8.js" crossorigin="anonymous"></script>
+    <title>Admin Panel | edit</title>
+</head>
+<body class="bg-gray-100 text-gray-800 max-w-lg flex flex-col m-auto">
+    <div class="container">
+        <a href="./admin.html">Go back</a>
+        <h1>Edit</h1>
+        <div class="loader">Loading item...</div>
+        <div id="error"></div>
+        <div class="flex justify-center">
+            <form class="form-edit-list form-add-list p-3 w-full">
+                <div class="form-object flex justify-between mb-2">
+                    <label for="title" class="p-1">Title</label>
+                    <input type="text" id="title" class="p-1"/>
+                </div>
+                <div class="form-object flex justify-between mb-2">
+                    <label for="price" class="p-1">Price</label>
+                    <input type="text" id="price" class="p-1"/>
+                </div>
+                <div class="form-object flex justify-between mb-2">
+                    <label for="img" class="p-1 w-full">Change image: </label>
+                    <!--Do something with the button?-->
+                    <!-- <div class="upload-btn p-1"></div> -->
+                    <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" alt="">
+                </div>
+                <input type="file" id="img" name="img" accept="image/*" class="p-1"/>
+                <div class="form-object flex flex-col justify-between mb-2">
+                    <label for="description" class="p-1">Description</label>
+                    <textarea id="description" class="p-1"rows="5"></textarea>
+                </div>
+                <div class="form-object">
+                    <input id="id" type="hidden">
+                </div>
+                <div class="flex justify-center button-container">
+                    <div class="form-object w-full flex justify-center">
+                        <button id="update" type="submit" class="w-1/2 p-2">Update</button>
+                    </div>
+                    <div class="form-object w-full flex justify-center">
+                        <button id="delete" type="submit" class="w-1/2 p-2 bg-red-500">Delete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./script/admin/edit.js" type="module"></script>
+</body>
+</html>
