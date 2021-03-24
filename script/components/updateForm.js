@@ -38,9 +38,10 @@ async function updateToApi(title, price, description, id) {
 		document.querySelector('#error').style.color = 'green';
 	} catch (error) {
 		console.log(error);
-	} finally {
-		setTimeout(function() {
-			window.history.back();
-		}, 8000);
 	}
+	//  finally {
+	// 	setTimeout(function() {
+	// 		window.history.back();
+	// 	}, 8000);
+	// }
 }

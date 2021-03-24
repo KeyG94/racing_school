@@ -3,6 +3,7 @@ import { products } from '../utills/settings.js';
 import { displayMessage } from '../utills/error.js';
 import {baseImageUrl} from '../utills/baseUrl.js';
 import updateToApi from '../components/updateForm.js';
+import uploadImageToApi from '../components/uploadImage.js';
 import deleteRequest from '../components/deleteFromApi.js';
 
 const queryBarString = document.location.search;
@@ -25,6 +26,7 @@ const messageOutput = document.querySelector('#error');
 const loader = document.querySelector('.loader');
 const deleteBtn = document.querySelector('#delete');
 const newImage = document.querySelector('#img');
+
 
 (async function() {
 	try {
@@ -49,6 +51,19 @@ const newImage = document.querySelector('#img');
 	}
 })();
 
+newImage.addEventListener('change', function(){
+	console.log(this.files);
+
+	let reader = new FileReader();
+	reader.readAsDataURL(this.files[0]);
+	reader.onload = e => {
+		image.src = e.target.result;
+	}
+	console.log(newImage.files[0])
+});
+
+
+
 form.addEventListener('submit', submitForm);
 
 function submitForm(event) {
@@ -67,5 +82,12 @@ function submitForm(event) {
 		return displayMessage('Warning', 'Please fill out all the fields');
 	}
 
-	updateToApi(titleValue, priceValue, descriptionValue, idValue);
+	if(imageValue.files){
+		console.log(imageValue.files[0])
+		uploadImageToApi(idValue, imageValue.files[0], 'products', 'image');
+		updateToApi(titleValue, priceValue, descriptionValue, idValue);
+	} else {
+		updateToApi(titleValue, priceValue, descriptionValue, idValue);
+	}
+
 }
