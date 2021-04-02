@@ -1,26 +1,45 @@
 import { displayMessage } from '../utills/error.js';
 import pushToApi from '../components/pushForm.js';
+import uploadImageToApi from '../components/uploadImage.js';
 
 const form = document.querySelector('form');
 const title = document.querySelector('#title');
-const author = document.querySelector('#author');
-const summary = document.querySelector('#summary');
+const price = document.querySelector('#price');
+const description = document.querySelector('#description');
 const messageOutput = document.querySelector('#error');
-console.log(summary.value);
-form.addEventListener('submit', submitForm);
+const newImage = document.querySelector('#img');
+const image = document.querySelector('img');
+const featuredBox = document.querySelector('#featured');
+console.log(description.value);
 
-function submitForm(event) {
-	event.preventDefault();
+
+newImage.addEventListener('change', function() {
+	let reader = new FileReader();
+	reader.readAsDataURL(this.files[0]);
+	reader.onload = (e) => {
+		image.src = e.target.result;
+	};
+});
+
+form.addEventListener('submit', (e) => submitForm(e));
+
+function submitForm(e) {
+	e.preventDefault();
 
 	const titleValue = title.value.trim();
-	const authorValue = author.value.trim();
-	const summaryValue = summary.value.trim();
+	const priceValue = price.value.trim();
+	const descriptionValue = description.value.trim();	
+	const imageValue = newImage;
+
+	console.log(imageValue.files.length)
 
 	messageOutput.innerHTML = '';
 
-	if (!titleValue || !authorValue || !summaryValue) {
-		return displayMessage('Warning!', 'Please fill out all the fields');
+	if (!titleValue || !priceValue || !descriptionValue || imageValue.files.length === 0) {
+		return displayMessage('Warning', 'Please fill out all the fields and upload a product image');
 	}
 
-	pushToApi(titleValue, authorValue, summaryValue);
+	if (imageValue.files) {
+		pushToApi(titleValue, priceValue, descriptionValue);
+	}
 }

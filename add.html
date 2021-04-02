@@ -17,31 +17,33 @@
             <form class="form-add-list p-3 w-full">
                 <div class="form-object flex justify-between mb-2">
                     <label for="title" class="p-1">Title</label>
-                    <input type="text" id="title" class="p-1"/>
+                    <input type="text" name="title" id="title" class="p-1"/>
                 </div>
                 <div class="form-object flex justify-between mb-2">
-                    <label for="author" class="p-1">Author</label>
-                    <input type="text" id="author" class="p-1"/>
+                    <label for="price" class="p-1">Price</label>
+                    <input type="text" name="price" id="price" class="p-1"/>
                 </div>
                 <div class="form-object flex justify-between mb-2">
-                    <label for="img" class="p-1 w-full">Select image: </label>
-                    <div class="upload-btn p-1"></div>
-                    <div class="relative">
-                        <!--Parent to position the hidden target correctly-->
-                        <input type="file" id="img" name="img" accept="image/*" class="p-1"/>
-                    </div>
+                    <label for="featured" class="p-1">Featured:</label>
+                    <input type="checkbox" name="featured" id="featured" class="p-1" />
                 </div>
+                <div class="form-object flex justify-between mb-2">
+                    <label for="img" class="p-1 w-full">New Image: </label>
+                    <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" alt="" width="200px">
+                </div>
+
+                <input type="file" id="img" name="img" accept="image/*" class="p-1"/>
+
                 <div class="form-object flex flex-col justify-between mb-2">
-                    <label for="summary" class="p-1">Details</label>
-                    <textarea id="summary" class="p-1"></textarea>
+                    <label for="description" class="p-1">Description</label>
+                    <textarea id="description" name="description" class="p-1"></textarea>
                 </div>
                 <div class="form-object">
-                    <input id="id" type="hidden">
+                    <input id="id" name="refId" type="hidden">
                 </div>
                 <div class="form-object flex justify-center text-center">
-                    <button id="add" type="submit" class="w-1/3 p-2">Add</button>
+                    <button id="add" type="submit" class="w-1/3 p-2" onclick="(e) => submitForm(e)">Add</button>
                 </div>
-                <!--Add Image todo-->
             </form>
         </div>
     </div>

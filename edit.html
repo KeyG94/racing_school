@@ -18,29 +18,33 @@
             <form class="form-edit-list form-add-list p-3 w-full">
                 <div class="form-object flex justify-between mb-2">
                     <label for="title" class="p-1">Title</label>
-                    <input type="text" id="title" class="p-1"/>
+                    <input type="text" name="title" id="title" class="p-1"/>
                 </div>
                 <div class="form-object flex justify-between mb-2">
                     <label for="price" class="p-1">Price</label>
-                    <input type="text" id="price" class="p-1"/>
+                    <input type="text" name="price" id="price" class="p-1"/>
+                </div>
+                <div class="form-object flex justify-between mb-2">
+                    <label for="featured" class="p-1">Featured:</label>
+                    <input type="checkbox" name="featured" id="featured" class="p-1" checked=""/>
                 </div>
                 <div class="form-object flex justify-between mb-2">
                     <label for="img" class="p-1 w-full">Change image: </label>
-                    <!--Do something with the button?-->
-                    <!-- <div class="upload-btn p-1"></div> -->
                     <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" alt="" width="200px">
                 </div>
+
                 <input type="file" id="img" name="img" accept="image/*" class="p-1"/>
+                
                 <div class="form-object flex flex-col justify-between mb-2">
                     <label for="description" class="p-1">Description</label>
-                    <textarea id="description" class="p-1"rows="5"></textarea>
+                    <textarea id="description" name="description" class="p-1"rows="5"></textarea>
                 </div>
                 <div class="form-object">
-                    <input id="id" type="hidden">
+                    <input id="id" name="refId" type="hidden">
                 </div>
                 <div class="flex justify-center button-container">
                     <div class="form-object w-full flex justify-center">
-                        <button id="update" type="submit" class="w-1/2 p-2">Update</button>
+                        <button id="update" type="submit" class="w-1/2 p-2" onclick="(e) => upDate(e)">Update</button>
                     </div>
                     <div class="form-object w-full flex justify-center">
                         <button id="delete" type="submit" class="w-1/2 p-2 bg-red-500">Delete</button>

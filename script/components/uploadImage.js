@@ -5,43 +5,35 @@ import { displayMessage } from '../utills/error.js';
 
 export default uploadImageToApi;
 
-async function uploadImageToApi(id, files, refId, field, ref){
-    const url = baseUrl + upload;
-	const data = JSON.stringify({
-		id,
-        files,
-		refId,
-        field,
-		ref,
-});
-    const token = getToken();
+async function uploadImageToApi(data) {
+	const url = baseUrl + upload;
 
-    const options = {
-        method: 'POST',
-        body: data,
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-        }
-    };
+	const token = getToken();
 
-    try {
-        const response = await fetch(url, options);
-        const json = await response.json();
-        console.log(json);
+	const options = {
+		method: 'POST',
+		body: data,
+		headers: {
+			Authorization: `Bearer ${token}`
+		}
+	};
 
-        if (json.error) {
-            displayMessage(json.error, json.message);
-        }
+	try {
+		const response = await fetch(url, options);
+		const json = await response.json();
+		console.log('update:', json);
+		if (json.error) {
+			displayMessage(json.error, json.message);
+		}
 
-        displayMessage(json.title, 'Was successfully updated! You will be taken back shortly.');
-        document.querySelector('#error').style.color = 'green';
-    } catch (error) {
-        console.log(error);
-    }
-    // } finally {
-    //     setTimeout(function() {
-    //         window.history.back();
-    //     }, 8000);
-    // }
-};
+		displayMessage(json.title, 'Was successfully updated! You will be taken back shortly.');
+		document.querySelector('#error').style.color = 'green';
+        
+	} catch (error) {
+		console.log(error);
+	} finally {
+		setTimeout(function() {
+			window.history.back();
+		}, 8000);
+	}
+}

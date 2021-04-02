@@ -5,12 +5,13 @@ import { displayMessage } from '../utills/error.js';
 
 export default updateToApi;
 
-async function updateToApi(title, price, description, id) {
+async function updateToApi(title, price, description, featured, id) {
 	const url = baseUrl + products + '/' + id;
 	const data = JSON.stringify({
 		title,
 		price,
 		description,
+		featured,
 		id
 	});
 
@@ -38,10 +39,9 @@ async function updateToApi(title, price, description, id) {
 		document.querySelector('#error').style.color = 'green';
 	} catch (error) {
 		console.log(error);
+	} finally {
+		setTimeout(function() {
+			window.history.back();
+		}, 8000);
 	}
-	//  finally {
-	// 	setTimeout(function() {
-	// 		window.history.back();
-	// 	}, 8000);
-	// }
 }
