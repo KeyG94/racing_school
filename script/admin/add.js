@@ -10,8 +10,6 @@ const messageOutput = document.querySelector('#error');
 const newImage = document.querySelector('#img');
 const image = document.querySelector('img');
 const featuredBox = document.querySelector('#featured');
-console.log(description.value);
-
 
 newImage.addEventListener('change', function() {
 	let reader = new FileReader();
@@ -30,8 +28,7 @@ function submitForm(e) {
 	const priceValue = price.value.trim();
 	const descriptionValue = description.value.trim();	
 	const imageValue = newImage;
-
-	console.log(imageValue.files.length)
+	const featuredValue = featuredBox.checked;
 
 	messageOutput.innerHTML = '';
 
@@ -40,6 +37,7 @@ function submitForm(e) {
 	}
 
 	if (imageValue.files) {
-		pushToApi(titleValue, priceValue, descriptionValue);
+		console.log(featuredValue)
+		// pushToApi(titleValue, priceValue, featuredValue, descriptionValue);
 	}
 }

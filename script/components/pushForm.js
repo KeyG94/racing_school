@@ -6,11 +6,12 @@ import uploadImageToApi from '../components/uploadImage.js'
 
 export default pushToApi;
 
-async function pushToApi(title, price, description) {
+async function pushToApi(title, price, featured, description) {
 	const url = baseUrl + products;
 	const data = JSON.stringify({
 		title,
 		price,
+		featured,
 		description
 	});
 
@@ -40,14 +41,14 @@ async function pushToApi(title, price, description) {
 		const fileField = formElements.namedItem('img');
 		console.log(fileField)
 
-		if (fileField !== null) {
+		if (fileField.files[0] !== undefined) {
 			const file = fileField.files[0];
-			console.log(file)
 			formData.append(`files`, file, file.name);
 		}
 
-		if (!fileField){
-			displayMessage('form', 'Is missing an image')
+		if (fileField.files[0] === undefined){
+			displayMessage('form', 'Is missing an image');
+			stop
 		}
 		const refId = json.id
 

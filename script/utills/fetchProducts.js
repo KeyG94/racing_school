@@ -9,14 +9,15 @@ async function getApi() {
 	try {
 		const fetchApi = await fetch(baseUrl + products);
 		const data = await fetchApi.json();
+		console.log(data)
 		const searchBox = document.querySelector('#search');
-
 		data.forEach((item) => createElement(item));
 
 		searchBox.addEventListener('keyup', function() {
 			createFilterList(data, searchBox.value);
 		});
 	} catch (error) {
+		console.log('fetch error')
 		displayMessage(error, errorMessage);
 	}
 }
