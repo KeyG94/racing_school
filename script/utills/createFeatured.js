@@ -8,14 +8,12 @@ let isFeatured = '';
 let root = document.querySelector('.root-index');
 
 export const createFeatured = (info) => {
-	
-
 	if (info.featured) {
 		isFeatured = 'fa';
 		output += `
         <div class="card mr-1 ml-1">
             <div class="card-image-container">
-                <a href="#">
+                <a href="${'productDetail.html'}?id=${info.id}">
                     <img src="${baseImageUrl + info.image.url}" alt="example">
                     <div class="img-overlay">Select</div>
                 </a>
@@ -39,9 +37,17 @@ const addClickEvent = () => {
 };
 
 const handleClick = (click) => {
-   
-	click.forEach((item) => item.addEventListener('click', function(){
-        updateToApi(this.dataset.title, this.dataset.price, this.dataset.description, this.dataset.featured, this.dataset.id)
-        
-    }));
+	click.forEach((item) =>
+		item.addEventListener('click', function() {
+			event.target.classList.toggle('fa');
+			event.target.classList.toggle('far');
+			updateToApi(
+				this.dataset.title,
+				this.dataset.price,
+				this.dataset.description,
+				this.dataset.featured,
+				this.dataset.id
+			);
+		})
+	);
 };

@@ -6,8 +6,8 @@ import updateToApi from '../components/updateForm.js';
 import uploadImageToApi from '../components/uploadImage.js';
 import deleteRequest from '../components/deleteFromApi.js';
 
-const queryBarString = document.location.search;
-const params = new URLSearchParams(queryBarString);
+export const queryBarString = document.location.search;
+export const params = new URLSearchParams(queryBarString);
 export const id = params.get('id');
 
 if (!id) {

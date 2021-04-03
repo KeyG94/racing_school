@@ -12,8 +12,10 @@ export const createElement = (info) => {
         <p class="card-summary">${info.summary}</p>
 		<i class="mr-1 ${isInStorage(info.id)
 			? 'fas'
-			: 'far'} fa-shopping-cart" data-id="${info.id}" data-title="${info.title}" data-price="${info.price}" data-description="${info.description}"></i>
-    <li>`;
+			: 'far'} fa-shopping-cart" data-id="${info.id}" data-title="${info.title}" data-price="${info.price}" data-description="${info.description}">
+		</i>
+    <li>
+	`;
 	console.log(output)
 	root.innerHTML = output;
 	addClickEvent();

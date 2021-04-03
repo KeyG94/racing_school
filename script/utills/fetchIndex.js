@@ -5,6 +5,7 @@ import { displayMessage, errorMessage } from './error.js';
 import { getUser } from './storage.js';
 
 export default getIndexApi;
+
 async function getIndexApi() {
     try {
         const fetchFromApi = await fetch(baseUrl + products);
