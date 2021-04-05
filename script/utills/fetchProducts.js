@@ -1,17 +1,19 @@
 import { baseUrl } from './baseUrl.js';
 import { products } from './settings.js';
-import { createElement, createFilterList } from './createElement.js';
+import createFilterList from './createFilteredList.js';
 import { displayMessage, errorMessage } from './error.js';
-import { getUser } from './storage.js';
+import createProduct from './createProductElements.js';
 
-export default getApi;
-async function getApi() {
+export default getProducts;
+
+async function getProducts() {
 	try {
 		const fetchApi = await fetch(baseUrl + products);
 		const data = await fetchApi.json();
 		console.log(data)
 		const searchBox = document.querySelector('#search');
-		data.forEach((item) => createElement(item));
+		// create products
+		data.forEach((item) => createProduct(item));
 
 		searchBox.addEventListener('keyup', function() {
 			createFilterList(data, searchBox.value);
@@ -21,23 +23,3 @@ async function getApi() {
 		displayMessage(error, errorMessage);
 	}
 }
-
-export const signInUser = () => {
-	const value = getUser();
-	const adminButton = document.querySelector('#admin-nav');
-
-	if (value.length === 0) {
-		adminButton.innerHTML = 'Login';
-	} else {
-		adminButton.innerHTML = `${value.username}`;
-	}
-
-	adminButton.addEventListener('click', function() {
-		console.log(value);
-		if (value.length === 0) {
-			location.href = './login.html';
-		} else {
-			location.href = './admin.html';
-		}
-	});
-};

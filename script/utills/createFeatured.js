@@ -1,13 +1,13 @@
-import { isInStorage } from '../utills/storage.js';
 import { baseImageUrl } from '../utills/baseUrl.js';
-import { addToCart } from './cart.js';
-import updateToApi from '../components/updateForm.js';
+import { addClickEvent } from '../utills/clickEvent.js';
 
-let output = '';
-let isFeatured = '';
-let root = document.querySelector('.root-index');
+	let output = '';
 
 export const createFeatured = (info) => {
+	
+	let root = document.querySelector('.root-index');
+	let isFeatured = '';
+
 	if (info.featured) {
 		isFeatured = 'fa';
 		output += `
@@ -29,25 +29,4 @@ export const createFeatured = (info) => {
 
 	root.innerHTML = output;
 	addClickEvent();
-};
-
-const addClickEvent = () => {
-	const favoriteItem = document.querySelectorAll('.fa-flag');
-	handleClick(favoriteItem);
-};
-
-const handleClick = (click) => {
-	click.forEach((item) =>
-		item.addEventListener('click', function() {
-			event.target.classList.toggle('fa');
-			event.target.classList.toggle('far');
-			updateToApi(
-				this.dataset.title,
-				this.dataset.price,
-				this.dataset.description,
-				this.dataset.featured,
-				this.dataset.id
-			);
-		})
-	);
 };

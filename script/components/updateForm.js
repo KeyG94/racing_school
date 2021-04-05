@@ -41,7 +41,7 @@ async function updateToApi(title, price, description, featured, id) {
 		console.log(error);
 	} finally {
 		setTimeout(function() {
-			window.history.back();
+			window.history.reload();
 		}, 8000);
 	}
 }

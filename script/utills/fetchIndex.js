@@ -1,8 +1,7 @@
 import { baseUrl } from './baseUrl.js';
 import { products } from './settings.js';
 import { createFeatured } from './createFeatured.js';
-import { displayMessage, errorMessage } from './error.js';
-import { getUser } from './storage.js';
+import signInUser from './userSetting.js';
 
 export default getIndexApi;
 
@@ -18,22 +17,4 @@ async function getIndexApi() {
     }
 }
 
-export const signInUser = () => {
-	const value = getUser();
-	const adminButton = document.querySelector('#admin-nav');
-
-	if (value.length === 0) {
-		adminButton.innerHTML = 'Login';
-	} else {
-		adminButton.innerHTML = `${value.username}`;
-	}
-
-	adminButton.addEventListener('click', function() {
-		console.log(value);
-		if (value.length === 0) {
-			location.href = './login.html';
-		} else {
-			location.href = './admin.html';
-		}
-	});
-};
+signInUser();

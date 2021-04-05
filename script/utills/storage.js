@@ -25,7 +25,7 @@ export const getToken = () => {
 	return localStorage.getItem(tokenKey);
 };
 
-export const getUser = () => {
+async function getUser() {
 	return getFromStorage(listKeyUser);
 };
 
@@ -37,3 +37,5 @@ const getFromStorage = (key) => {
 
 	return JSON.parse(value);
 };
+
+export {getUser};
