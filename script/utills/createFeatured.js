@@ -5,7 +5,7 @@ import { addClickEvent } from '../utills/clickEvent.js';
 
 export const createFeatured = (info) => {
 	
-	let root = document.querySelector('.root-index');
+	let root = document.querySelector('.root-index-2');
 	let isFeatured = '';
 
 	if (info.featured) {

@@ -1,8 +1,8 @@
 import { getUser } from './storage.js';
 
+export default signInUser;
 
-
-export default async function signInUser() {
+async function signInUser() {
 	const value = await getUser();
 	const adminButton = document.querySelector('#admin-nav');
 

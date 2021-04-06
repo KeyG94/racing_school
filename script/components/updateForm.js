@@ -40,8 +40,19 @@ async function updateToApi(title, price, description, featured, id) {
 	} catch (error) {
 		console.log(error);
 	} finally {
-		setTimeout(function() {
-			window.history.reload();
-		}, 8000);
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+
+		console.log(urlParams)
+
+		if(!urlParams.has('#')){
+			console.log(true)
+		} else {
+			setTimeout(function() {
+				window.location.reload();
+			}, 5000);
+
+		}
+		
 	}
 }
