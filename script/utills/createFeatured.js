@@ -14,7 +14,7 @@ export const createFeatured = (info) => {
         <div class="card mr-1 ml-1">
             <div class="card-image-container">
                 <a href="${'productDetail.html'}?id=${info.id}">
-                    <img src="${baseImageUrl + info.image.url}" alt="example">
+                    <img src="${baseImageUrl + info.image.url}" alt="${info.image.alternativeText}">
                     <div class="img-overlay">Select</div>
                 </a>
             </div>

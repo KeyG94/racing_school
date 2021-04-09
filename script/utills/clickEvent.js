@@ -2,10 +2,10 @@ import updateToApi from '../components/updateForm.js';
 
 export const addClickEvent = () => {
 	const featuredItem = document.querySelectorAll('.fa-flag');
-	handleClick(featuredItem);
+	handleApiClick(featuredItem);
 };
 
-export const handleClick = (click) => {
+export const handleApiClick = (click) => {
 	click.forEach((item) =>
 		item.addEventListener('click', function() {
 			event.target.classList.toggle('fa');

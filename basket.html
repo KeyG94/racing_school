@@ -17,13 +17,14 @@
             <nav class="nav p-5 relative">
                 <ul class="flex justify-center">
                     <li class="line p-2 mr-1"><a href="./index.html">Home</a></li>
-                    <li class="line p-2 ml-1"><a href="#" class="active">Products</a></li> 
+                    <li class="line p-2 ml-1"><a href="./products.html" class="">Products</a></li> 
+                    <li class="line p-2 ml-1"><a href="#" class="active">Basket</a></li> 
                 </ul>
             </nav>
             <!--login, user-->
             <div class="profile absolute top-5 right-5">
                 <img src="./images/placeholder/profile-placeholder.png" class="profile-img" alt="profile image">
-                <span class="text-center" id="userButton">Login</span>
+                <div id="admin-nav"></div>
             </div>
         </header>
         <main>
@@ -31,139 +32,15 @@
                 <ul class="flex">
                     <a href="./index.html"><li class="mr-1 text-gray-400 hover:text-gray-100">home </li></a>
                     <a href="./products.html"><li class="mr-1 text-gray-400 hover:text-gray-100">- products -</li></a>
-                    <a href="#"><li class="text-gray-400 hover:text-gray-100" >${basket}</li></a>
+                    <a href="#"><li class="text-gray-400 hover:text-gray-100">basket</li></a>
                 </ul>
             </div>
             <section class="flex justify-center flex-col">
-
+                <div class="flex justify-center p-2">
+                    <button class="w-1/2 p-2 bg-red-500 hover:bg-red-800" id="clear-btn">Clear list</button>
+                </div>
+                <div class="root-basket"></div>
                 <!--Root basket cards-->
-                <div class="card-container flex justify-between">
-                    <div class="card-left flex justify-center">
-                        <div class="basket-card-image">
-                            <img src="./images/coaching/focusAhead.png" alt="" class="relative">
-                            <div class="img-overlay"><i class="fas fa-eye"></i></div>
-                        </div>
-                        <div class="card-title ml-2">
-                            <h4>${Product Title}</h4>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="card-price">
-                        <h4>Price</h4>
-                        <p>159,-</p>
-                    </div>
-                    <i class="fas fa-minus-circle"></i>
-                </div>
-                <!--Spacer example-->
-                <div class="card-container flex justify-between">
-                    <div class="card-left flex justify-center">
-                        <div class="basket-card-image">
-                            <img src="./images/coaching/focusAhead.png" alt="" class="relative">
-                            <div class="img-overlay"><i class="fas fa-eye"></i></div>
-                        </div>
-                        <div class="card-title ml-5">
-                            <h4>${Product Title}</h4>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="card-price">
-                        <h4>Price</h4>
-                        <p>159,-</p>
-                    </div>
-                    <i class="fas fa-minus-circle"></i>
-                </div>
-                <!--Spacer example-->
-                <div class="card-container flex justify-between">
-                    <div class="card-left flex justify-center">
-                        <div class="basket-card-image">
-                            <img src="./images/coaching/focusAhead.png" alt="" class="relative">
-                            <div class="img-overlay"><i class="fas fa-eye"></i></div>
-                        </div>
-                        <div class="card-title ml-5">
-                            <h4>${Product Title}</h4>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="card-price">
-                        <h4>Price</h4>
-                        <p>159,-</p>
-                    </div>
-                    <i class="fas fa-minus-circle"></i>
-                </div>
-                <!--Spacer example-->
-                <!--Spacer example-->
-                <div class="card-container flex justify-between">
-                    <div class="card-left flex justify-center">
-                        <div class="basket-card-image">
-                            <img src="./images/coaching/focusAhead.png" alt="" class="relative">
-                            <div class="img-overlay"><i class="fas fa-eye"></i></div>
-                        </div>
-                        <div class="card-title ml-5">
-                            <h4>${Product Title}</h4>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="card-price">
-                        <h4>Price</h4>
-                        <p>159,-</p>
-                    </div>
-                    <i class="fas fa-minus-circle"></i>
-                </div>
-                <!--Spacer example-->
-                <div class="card-container flex justify-between">
-                    <div class="card-left flex justify-center">
-                        <div class="basket-card-image">
-                            <img src="./images/coaching/focusAhead.png" alt="" class="relative">
-                            <div class="img-overlay"><i class="fas fa-eye"></i></div>
-                        </div>
-                        <div class="card-title ml-5">
-                            <h4>${Product Title}</h4>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="card-price">
-                        <h4>Price</h4>
-                        <p>159,-</p>
-                    </div>
-                    <i class="fas fa-minus-circle"></i>
-                </div>
-                <!--Spacer example-->
-                <!--Spacer example-->
-                <div class="card-container flex justify-between">
-                    <div class="card-left flex justify-center">
-                        <div class="basket-card-image">
-                            <img src="./images/coaching/focusAhead.png" alt="" class="relative">
-                            <div class="img-overlay"><i class="fas fa-eye"></i></div>
-                        </div>
-                        <div class="card-title ml-5">
-                            <h4>${Product Title}</h4>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="card-price">
-                        <h4>Price</h4>
-                        <p>159,-</p>
-                    </div>
-                    <i class="fas fa-minus-circle"></i>
-                </div>
-                <!--Spacer example-->
-                <div class="card-container flex justify-between">
-                    <div class="card-left flex justify-center">
-                        <div class="basket-card-image">
-                            <img src="./images/coaching/focusAhead.png" alt="" class="relative">
-                            <div class="img-overlay"><i class="fas fa-eye"></i></div>
-                        </div>
-                        <div class="card-title ml-5">
-                            <h4>${Product Title}</h4>
-                            <a href="#">Read More</a>
-                        </div>
-                    </div>
-                    <div class="card-price">
-                        <h4>Price</h4>
-                        <p>159,-</p>
-                    </div>
-                    <i class="fas fa-minus-circle"></i>
-                </div>
 
                 <div class="card-container flex justify-around">
                     <div class="w-3/4"></div>
@@ -175,5 +52,6 @@
             </section>
         </main>
     </div>
+    <script src="./script/components/loadFavorites.js" type="module"></script>
 </body>
 </html>
