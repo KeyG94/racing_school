@@ -7,6 +7,7 @@ import { addToCart } from '../utills/cart.js';
 	const params = new URLSearchParams(queryBarString);
 	const id = params.get('id');
 	const objectUrl = baseUrl + products + '/' + id;
+   
 	let output = '';
 	let root = document.querySelector('.root-product');
 
@@ -67,5 +68,7 @@ const addClickEvent = () => {
 }
 
 const handleClick = (add) => {
-    add.forEach((item) => item.addEventListener('click', addToCart));
+    add.forEach((item) => {
+        item.addEventListener('click', addToCart);
+    })
 };

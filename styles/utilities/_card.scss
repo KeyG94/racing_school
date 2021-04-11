@@ -5,6 +5,10 @@
     padding: .5em;
     margin: 7px auto;
 
+    .product-image{
+        object-fit: cover;
+    }
+
     .basket-card-image{
         max-width: 170px;
         position: relative;

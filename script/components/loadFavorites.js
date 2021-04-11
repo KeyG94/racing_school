@@ -1,98 +1,89 @@
-import { checkStorage, isInStorage, saveToStorage } from '../utills/storage.js';
-// import { baseImageUrl } from '../utills/baseUrl.js';
+import { baseImageUrl, baseUrl } from '../utills/baseUrl.js';
+import { products } from '../utills/settings.js';
+import { checkStorage, saveToStorage } from '../utills/storage.js';
 import signInUser from '../utills/userSetting.js';
 
 signInUser();
 
-let basketList = document.querySelector('.root-basket');
+const onLoad = async () => {
+	/* Build items*/
+	const items = checkStorage();
+	const basketList = document.querySelector('.root-basket');
+	basketList.innerHTML = await getImageFromApi(items)
+	const removeButtons = document.querySelectorAll('.delete-icon')
+	removeButtons.forEach(element => element.onclick = () => removeItem(element.dataset.id))
+
+	/* Build prices */
+	const priceList = items.map(item => parseFloat(item.price))
+	const priceOutput = document.querySelector('.total-price');
+	priceOutput.innerHTML = displayTotalPrice(priceList);
+}
+onLoad();
+
 const clearButton = document.querySelector('#clear-btn');
-console.log(basketList);
 
-let output = '';
-const items = checkStorage();
-
-console.log(items);
-
-if (items.length > 0) {
-	items.forEach((item) => {
-		output += `
-			<div class="card-container flex justify-between">
-				<div class="card-left flex justify-center">
-					<div class="basket-card-image">
-						<img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" alt="" class="relative">
-						<div class="img-overlay"><i class="fas fa-eye"></i></div>
-					</div>
-					<div class="card-title ml-2">
-						<h4>${item.title}</h4>
-						<a href="${'productDetail.html'}?id=${item.id}">Read More</a>
-					</div>
-				</div>
-				<div class="card-price">
-					<h4>Price</h4>
-					<p>${item.price},-</p>
-				</div>
-				<i class="fas fa-minus-circle delete-icon" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}"></i>
-			</div>
-		`;
-		console.log(basketList);
-		basketList.innerHTML = output;
-		clickTarget();
-	});
-} else {
-	output = `
+async function getImageFromApi(items){
+	if (items.length === 0){
+		return `
 		<div class="p-2"> 
 			<h3 class="card-title">Oops, looks like there is nothing in your shopping cart yet... Go back to products and add the product you want to the cart
 			</h3>
 		</div>
-	`;
-	basketList.innerHTML = output;
-}
-
-async function clickTarget() {
-	const clickedItem = document.querySelectorAll('.delete-icon');
-	handleStorageClick(clickedItem);
-}
-
-async function handleStorageClick(click){
-	click.forEach((item) => {
-		item.addEventListener('click', function(){
-			console.log(this)
-			const { id, title, price} = event.target.dataset;
-			const currentList = checkStorage();
-		
-			console.log(currentList);
-			if (!isInStorage(id)) {
-				const item = { id, title, price};
-				currentList.push(item);
-				saveToStorage(currentList);
-			} else {
-				const newList = currentList.filter((basket) => basket.id !== id);
-				saveToStorage(newList);
-			}
-			window.location.reload();
+		`;
+	} 
+	try {
+		const request = await fetch(baseUrl + products);
+		const data = await request.json();
+		const itemsWithImage = items.map(item => {
+			const itemFromApi = data.find(dataObj => dataObj.id  === parseInt(item.id))
+			return {...item, image: itemFromApi.image}
 		})
-	})
-}
 
-async function addToCart(event) {
-	console.log(event.target)
-	const { id, title, price, description } = event;
-	const currentList = checkStorage();
-
-	// console.log(currentList);
-	if (!isInStorage(id)) {
-		const item = { id, title, price, description };
-		currentList.push(item);
-		saveToStorage(currentList);
-	} else {
-		const newList = currentList.filter((favorites) => favorites.id !== id);
-		saveToStorage(newList);
+		return itemsWithImage.map(item => createItem(item))	
+	} catch (e) {
+		console.log(e)
 	}
 }
+
+const createItem = (item) => {
+	return `
+	<div class="card-container flex justify-between">
+		<div class="card-left flex justify-center">
+		<div class="basket-card-image overflow-hidden">
+			<img src='${baseImageUrl + item.image.url}' alt="${baseImageUrl + item.image.alternativeText}" class="relative h-28 w-32 product-image">
+			<div class="img-overlay"><i class="fas fa-eye"></i></div>
+		</div>
+			<div class="card-title ml-1 w-28 flex flex-col justify-between">
+				<h4>${item.title}</h4>
+				<a href="${'productDetail.html'}?id=${item.id}" target="_blank" class="hover:text-gray-500">Read More</a>
+			</div>
+		</div>
+		<div class="card-price flex flex-col justify-between">
+			<h4>Price</h4>
+			<p class="m-0">${item.price},-</p>
+		</div>
+		<div class="flex justify-center p-2">
+			<i class="fas fa-minus-circle delete-icon cursor-pointer" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}"></i>
+		</div>
+	</div>
+`
+}
+
+function displayTotalPrice(prices){
+	const totalPrice = prices.reduce((acc, val) => acc + val, 0);
+	return `${Math.round(totalPrice)},-`;
+}
+
+function removeItem(id){
+	const currentList = checkStorage();
+	const newList = currentList.filter((item) => item.id !== id);
+	saveToStorage(newList);
+	onLoad()
+} 
 
 clearButton.addEventListener('click', clearList);
 
 async function clearList() {
 	window.localStorage.clear();
-	location.reload();
-}
+	onLoad();
+};

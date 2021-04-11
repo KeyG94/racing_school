@@ -287,9 +287,6 @@ footer .main-products-btn:hover {
 .card-list-container tr {
   transition: linear 0.2s;
 }
-.card-list-container a {
-  padding: 9px 22px;
-}
 .card-list-container a:hover {
   cursor: pointer;
 }
@@ -366,6 +363,9 @@ footer .main-products-btn:hover {
   background-color: #8bc63f;
   padding: 0.8em 2em;
 }
+.btn:focus {
+  outline: none;
+}
 
 .card-container {
   max-width: 700px;
@@ -373,6 +373,9 @@ footer .main-products-btn:hover {
   background-color: #2E2E2E;
   padding: 0.5em;
   margin: 7px auto;
+}
+.card-container .product-image {
+  object-fit: cover;
 }
 .card-container .basket-card-image {
   max-width: 170px;
