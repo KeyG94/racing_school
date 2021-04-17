@@ -21,14 +21,12 @@ async function uploadImageToApi(data) {
 	try {
 		const response = await fetch(url, options);
 		const json = await response.json();
-		console.log('update:', json);
 		if (json.error) {
 			displayMessage(json.error, json.message);
 		}
 
 		displayMessage(json.title, 'Was successfully updated! You will be taken back shortly.');
 		document.querySelector('#error').style.color = 'green';
-        
 	} catch (error) {
 		console.log(error);
 	} finally {

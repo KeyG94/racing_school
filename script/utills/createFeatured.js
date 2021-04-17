@@ -20,7 +20,7 @@ export const createFeatured = (info) => {
             </div>
             <h4>${info.title}</h4>
             <div class="detail flex">
-                <p class="flex-1">${info.price}</p>
+                <p class="flex-1">${info.price},-</p>
                 <i class="${isFeatured} fa-flag mr-4" data-id="${info.id}" data-title="${info.title}" data-price="${info.price}" data-featured="${!info.featured}" data-description="${info.description}"></i>
             </div>
         </div>

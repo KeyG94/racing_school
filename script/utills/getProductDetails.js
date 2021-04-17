@@ -7,7 +7,7 @@ import { addToCart } from '../utills/cart.js';
 	const params = new URLSearchParams(queryBarString);
 	const id = params.get('id');
 	const objectUrl = baseUrl + products + '/' + id;
-   
+
 	let output = '';
 	let root = document.querySelector('.root-product');
 
@@ -17,8 +17,6 @@ import { addToCart } from '../utills/cart.js';
 	try {
 		const response = await fetch(objectUrl);
 		const data = await response.json();
-
-		console.log(data);
 
 		output = `
         <section class="image w-full md:w-1/2 md:pr-2">
@@ -56,19 +54,19 @@ import { addToCart } from '../utills/cart.js';
 
 		root.innerHTML = output;
 
-        addClickEvent();
+		addClickEvent();
 	} catch (error) {
 		console.log(error);
 	}
 })();
 
 const addClickEvent = () => {
-    const addToBasket = document.querySelectorAll('button');
+	const addToBasket = document.querySelectorAll('button');
 	handleClick(addToBasket);
-}
+};
 
 const handleClick = (add) => {
-    add.forEach((item) => {
-        item.addEventListener('click', addToCart);
-    })
+	add.forEach((item) => {
+		item.addEventListener('click', addToCart);
+	});
 };

@@ -6,15 +6,13 @@ import signInUser from './userSetting.js';
 export default getIndexApi;
 
 async function getIndexApi() {
-    try {
-        const fetchFromApi = await fetch(baseUrl + products);
-        const data = await fetchFromApi.json();
-        console.log(data)
-        data.forEach((item) => createFeatured(item));
-    }
-    catch (error){
-        console.log(error)
-    }
+	try {
+		const fetchFromApi = await fetch(baseUrl + products);
+		const data = await fetchFromApi.json();
+		data.forEach((item) => createFeatured(item));
+	} catch (error) {
+		console.log(error);
+	}
 }
 
 signInUser();

@@ -20,4 +20,4 @@ async function signInUser() {
 			location.href = './admin.html';
 		}
 	});
-};
+}

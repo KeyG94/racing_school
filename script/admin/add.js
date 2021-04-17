@@ -37,7 +37,6 @@ function submitForm(e) {
 	}
 
 	if (imageValue.files) {
-		console.log(featuredValue)
-		// pushToApi(titleValue, priceValue, featuredValue, descriptionValue);
+		pushToApi(titleValue, priceValue, featuredValue, descriptionValue);
 	}
 }

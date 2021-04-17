@@ -29,7 +29,6 @@ async function updateToApi(title, price, description, featured, id) {
 	try {
 		const response = await fetch(url, options);
 		const json = await response.json();
-		console.log(json);
 
 		if (json.error) {
 			displayMessage(json.error, json.message);
@@ -43,16 +42,14 @@ async function updateToApi(title, price, description, featured, id) {
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 
-		console.log(urlParams)
+		console.log(urlParams);
 
-		if(!urlParams.has('#')){
-			console.log(true)
+		if (!urlParams.has('#')) {
+			console.log(true);
 		} else {
 			setTimeout(function() {
 				window.location.reload();
 			}, 5000);
-
 		}
-		
 	}
 }

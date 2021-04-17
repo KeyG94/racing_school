@@ -57,7 +57,6 @@ async function loginRequest(name, password) {
 			btn.style.color = 'red';
 
 			errorDiv.innerHTML = json.message[0].messages[0].message;
-			console.log(error);
 		}
 	} catch (error) {
 		console.log(error);

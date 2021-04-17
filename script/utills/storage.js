@@ -10,7 +10,6 @@ export const isInStorage = (id) => !!checkStorage().find((item) => item.id == id
 
 export const saveToStorage = (favorite) => {
 	localStorage.setItem(listKey, JSON.stringify(favorite));
-	console.log(favorite);
 };
 
 export const saveUser = (user) => {
@@ -27,7 +26,7 @@ export const getToken = () => {
 
 async function getUser() {
 	return getFromStorage(listKeyUser);
-};
+}
 
 const getFromStorage = (key) => {
 	const value = localStorage.getItem(key);
@@ -38,4 +37,4 @@ const getFromStorage = (key) => {
 	return JSON.parse(value);
 };
 
-export {getUser};
+export { getUser };

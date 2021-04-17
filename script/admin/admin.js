@@ -20,8 +20,8 @@ import { products } from '../utills/settings.js';
 			<td>${title.title}</td>
 			<td>${title.price}</td>
 			<td>${title.featured}</td>
-			<td><img src="${baseImageUrl + imageUrl}"></td>
-			<td><a href="./edit.html?id=${title.id}" class="link-table"><i class="fas fa-cog"></i></a></td>
+			<td><img src="${baseImageUrl + imageUrl}" class="h-8"></td>
+			<td><a href="./edit.html?id=${title.id}" class="link-table pt-2 pb-2 pr-4 pl-4"><i class="fas fa-cog"></i></a></td>
 		</tr>  
         `;
 		});

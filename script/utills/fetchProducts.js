@@ -10,7 +10,6 @@ async function getProducts() {
 	try {
 		const fetchApi = await fetch(baseUrl + products);
 		const data = await fetchApi.json();
-		console.log(data)
 		const searchBox = document.querySelector('#search');
 		// create products
 		data.forEach((item) => createProduct(item));
@@ -19,7 +18,7 @@ async function getProducts() {
 			createFilterList(data, searchBox.value);
 		});
 	} catch (error) {
-		console.log('fetch error')
+		console.log('fetch error');
 		displayMessage(error, errorMessage);
 	}
 }
