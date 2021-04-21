@@ -1,6 +1,5 @@
 import { displayMessage } from '../utills/error.js';
 import pushToApi from '../components/pushForm.js';
-import uploadImageToApi from '../components/uploadImage.js';
 
 const form = document.querySelector('form');
 const title = document.querySelector('#title');
