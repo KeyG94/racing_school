@@ -1,26 +1,26 @@
-const parse = require('pg-connection-string').parse;
-const config = parse(process.env.DATABASE_URL);
+const { parse } = require("pg-connection-string");
 
-module.exports = ({ env }) => ({
-    defaultConnection: 'default',
+module.exports = ({ env }) => {
+  const { host, port, database, user, password } = parse(env("DATABASE_URL"));
+
+  return {
+    defaultConnection: "default",
     connections: {
       default: {
-        connector: 'bookshelf',
+        connector: "bookshelf",
         settings: {
-          client: 'postgres',
-          host: env('DATABASE_HOST', 'localhost'),
-          port: env.int('DATABASE_PORT', 5432),
-          database: env('DATABASE_NAME', 'strapi'),
-          username: env('DATABASE_USERNAME', 'strapi'),
-          password: env('DATABASE_PASSWORD', 'strapi'),
-          schema: env('DATABASE_SCHEMA', 'public'), // Not Required
-          ssl: {
-            rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false), // For self-signed certificates
-          },
+          client: "postgres",
+          host,
+          port,
+          database,
+          username: user,
+          password,
+          ssl: { rejectUnauthorized: false }
         },
         options: {
-          ssl: env.bool('DATABASE_SSL', false),
+          ssl: false
         },
       },
     },
-  });
+  };
+};
