@@ -8,7 +8,7 @@ export default getProducts;
 
 async function getProducts() {
 	try {
-		const fetchApi = await fetch(baseUrl + products);
+		const fetchApi = await fetch(`${baseUrl + products}`);
 		const data = await fetchApi.json();
 		const searchBox = document.querySelector('#search');
 		// create products

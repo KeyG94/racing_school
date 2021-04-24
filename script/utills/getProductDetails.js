@@ -1,12 +1,15 @@
-import { baseUrl, baseImageUrl } from '../utills/baseUrl.js';
+import { baseUrl } from '../utills/baseUrl.js';
 import { products } from '../utills/settings.js';
 import { addToCart } from '../utills/cart.js';
+import signInUser from '../utills/userSetting.js';
+
+signInUser();
 
 (async function() {
 	const queryBarString = document.location.search;
 	const params = new URLSearchParams(queryBarString);
 	const id = params.get('id');
-	const objectUrl = baseUrl + products + '/' + id;
+	const objectUrl = `${baseUrl + products + '/' + id}`
 
 	let output = '';
 	let root = document.querySelector('.root-product');
@@ -27,7 +30,7 @@ import { addToCart } from '../utills/cart.js';
                         <a href="#"><li class="text-gray-400 hover:text-gray-100" >${data.title}</li></a>
                     </ul>
                 </div>
-                <img src="${baseImageUrl + data.image.url}" class="w-full" alt="${data.image.alternativeText}">
+                <img src="${data.image.url}" class="w-full" alt="${data.image.alternativeText}">
             </section>
             <section class="details w-full md:w-1/2 md:pl-2">
                 <div class="title">
@@ -67,6 +70,7 @@ const addClickEvent = () => {
 
 const handleClick = (add) => {
 	add.forEach((item) => {
+        item.addEventListener('load', addToCart);
 		item.addEventListener('click', addToCart);
 	});
 };

@@ -1,4 +1,3 @@
-import { baseImageUrl } from '../utills/baseUrl.js';
 import { addClickEvent } from '../utills/clickEvent.js';
 
 	let output = '';
@@ -14,7 +13,7 @@ export const createFeatured = (info) => {
         <div class="card mr-1 ml-1">
             <div class="card-image-container">
                 <a href="${'productDetail.html'}?id=${info.id}">
-                    <img src="${baseImageUrl + info.image.url}" alt="${info.image.alternativeText}">
+                    <img src="${info.image.url}" alt="${info.image.alternativeText}">
                     <div class="img-overlay">Select</div>
                 </a>
             </div>

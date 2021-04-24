@@ -1,7 +1,6 @@
 import { baseUrl } from '../utills/baseUrl.js';
 import { products } from '../utills/settings.js';
 import { displayMessage } from '../utills/error.js';
-import { baseImageUrl } from '../utills/baseUrl.js';
 import updateToApi from '../components/updateForm.js';
 import uploadImageToApi from '../components/uploadImage.js';
 import deleteRequest from '../components/deleteFromApi.js';
@@ -28,7 +27,6 @@ const deleteBtn = document.querySelector('#delete');
 const newImage = document.querySelector('#img');
 const featuredBox = document.querySelector('#featured');
 
-
 (async function() {
 	try {
 		const response = await fetch(objectUrl);
@@ -37,11 +35,9 @@ const featuredBox = document.querySelector('#featured');
 		title.value = dataObject.title;
 		price.value = dataObject.price;
 		featuredBox.checked = dataObject.featured;
-
-		console.log(featuredBox.checked)
 		description.value = dataObject.description;
 		idInput.value = dataObject.id;
-		image.src = `${baseImageUrl + dataObject.image.formats.thumbnail.url}`;
+		image.src = `${dataObject.image.formats.thumbnail.url}`;
 		deleteBtn.addEventListener('click', function() {
 			deleteRequest(dataObject.id);
 		});

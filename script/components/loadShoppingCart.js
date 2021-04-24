@@ -1,4 +1,4 @@
-import { baseImageUrl, baseUrl } from '../utills/baseUrl.js';
+import { baseUrl } from '../utills/baseUrl.js';
 import { products } from '../utills/settings.js';
 import { checkStorage, saveToStorage } from '../utills/storage.js';
 import signInUser from '../utills/userSetting.js';
@@ -50,9 +50,8 @@ const createItem = (item) => {
 	<div class="card-container flex justify-between">
 		<div class="card-left flex justify-center">
 		<div class="basket-card-image overflow-hidden">
-			<img src='${baseImageUrl + item.image.url}' alt="${baseImageUrl +
-		item.image.alternativeText}" class="relative h-28 w-32 product-image">
-			<div class="img-overlay"><i class="fas fa-eye"></i></div>
+			<img src='${item.image.url}' alt="${item.image.alternativeText}" class="relative h-28 w-32 product-image">
+			<div class="img-overlay"><a href="${'productDetail.html'}?id=${item.id}" target="_blank"<i class="fas fa-eye"></i></a></div>
 		</div>
 			<div class="card-title ml-1 w-28 flex flex-col justify-between">
 				<h4>${item.title}</h4>
