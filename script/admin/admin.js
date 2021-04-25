@@ -19,7 +19,7 @@ import { products } from '../utills/settings.js';
 			<td>${title.title}</td>
 			<td>${title.price}</td>
 			<td>${title.featured}</td>
-			<td><img src="${imageUrl}" class="h-8 ml-auto mr-auto w-full"></td>
+			<td><img src="${imageUrl}" class="object-contain ml-auto mr-auto w-full h-auto"></td>
 			<td><a href="./edit.html?id=${title.id}" class="link-table pt-2 pb-2 pr-4 pl-4"><i class="fas fa-cog"></i></a></td>
 		</tr>  
         `;

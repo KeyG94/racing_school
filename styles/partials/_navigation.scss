@@ -1,5 +1,10 @@
 nav{
 
+    position: fixed;
+    z-index: 1;
+    border-radius: 0 0 15px 15px;
+    background-color: rgba($color: $primary-color, $alpha: .95);
+    
     li{
         transition: all ease-in-out .5s;
         letter-spacing: 1px;

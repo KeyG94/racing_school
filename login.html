@@ -9,29 +9,31 @@
     <title>Login | 78 Racing School</title>
 </head>
 <body>
+    <div class="content-wrap flex justify-center">
     <!--Navigation-->
-    <nav class="nav p-5">
-        <ul class="flex justify-center">
-            <li class="line p-2 mr-1"><a href="./index.html" class="">Home</a></li>
-            <li class="line p-2 ml-1"><a href="./products.html" class="">Products</a></li> 
-            <li class="line p-2 ml-1"><a href="./basket.html" class="">Basket</a></li> 
-        </ul>
-    </nav>
-    <div class="flex flex-col justify-center max-w-screen-sm mr-auto ml-auto">
+        <nav class="nav p-5">
+            <ul class="flex flex-col sm:flex-row sm:justify-center">
+                <li class="line p-1 mr-1"><a href="./index.html" class="">Home</a></li>
+                <li class="line p-1 ml-1"><a href="./products.html" class="">Products</a></li> 
+                <li class="line p-1 ml-1"><a href="./basket.html" class="">Basket</a></li> 
+            </ul>
+        </nav>
+    </div>
+    <div class="flex flex-col justify-center max-w-screen-sm mr-auto ml-auto mt-20">
         <div class="form-header">
             <h2 class="text-center">Log in</h2>
         </div>
         <div class="flex justify-center">
-            <form action="#" class="form-input form-login flex flex-col w-80 p-2" id="form">
+            <form action="#" class="form-input form-login flex flex-col w-80 p-4" id="form">
                 <span class="form-object-message text-center" id="username-message"></span>
-                <div class="form-element flex justify-between mb-2">
+                <div class="form-element flex justify-between mb-3">
                     <label for="username" class="p-1">username:</label>
-                    <input class="form-object focus:outline-none text-gray-800 p-1" type="text" name="username" id="form-username">
+                    <input class="form-object focus:outline-none text-gray-800 p-2" type="text" name="username" id="form-username">
                 </div>
                 <span class="form-object-message" id="password-message"></span>
-                <div class="form-element flex justify-between mb-2">
+                <div class="form-element flex justify-between mb-4">
                     <label for="password" class="p-1">password:</label>
-                    <input class="form-object focus:outline-none text-gray-800 p-1" type="password" name="password" id="form-password">
+                    <input class="form-object focus:outline-none text-gray-800 p-2" type="password" name="password" id="form-password">
                 </div>
                 <button class="btn btn-login" id="submit-btn">Login</button>
                 <div id="error-message" class="text-center"></div>

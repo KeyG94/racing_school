@@ -11,7 +11,7 @@
 <body class="bg-gray-100 text-gray-800 max-w-lg flex flex-col m-auto">
     <div class="container add-container">
         <a href="./admin.html">Go back</a>
-        <h1>Add new content</h1>
+        <h1 class='text-5xl sm:text-7xl p-4 text-center'>Add new content</h1>
         <div id="error"></div>
         <div class="flex justify-center">
             <form class="form-add-list p-3 w-full">
@@ -25,14 +25,14 @@
                 </div>
                 <div class="form-object flex justify-between mb-2">
                     <label for="featured" class="p-1">Featured:</label>
-                    <input type="checkbox" name="featured" id="featured" class="p-1" />
+                    <input type="checkbox" name="featured" id="featured" class="p-2" />
                 </div>
                 <div class="form-object flex justify-between mb-2">
                     <label for="img" class="p-1 w-full">New Image: </label>
-                    <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" alt="" width="200px">
+                    <img src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png" alt="placeholder image, landscape" width="200px" height="auto">
                 </div>
 
-                <input type="file" id="img" name="img" accept="image/*" class="p-1"/>
+                <input type="file" id="img" name="img" accept="image/*" class="p-1 h-auto"/>
 
                 <div class="form-object flex flex-col justify-between mb-2">
                     <label for="description" class="p-1">Description</label>

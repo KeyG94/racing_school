@@ -40,7 +40,7 @@ signInUser();
                 <div>
                     <h5>Details</h5>
                     <p class="">
-                        ${data.description}.<br>
+                        ${data.description}<br>
                         <span class="text-green"> Powered by 78 racing school</span>
                     </p>
                 </div>
