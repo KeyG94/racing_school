@@ -26,8 +26,7 @@ async function getImageFromApi(items) {
 	if (items.length === 0) {
 		return `
 		<div class="p-2"> 
-			<h3 class="card-title">Oops, looks like there is nothing in your shopping cart yet... Go back to products and add the product you want to the cart
-			</h3>
+			<h3 class="card-title">Oops, looks like you forgot to add any items to your shopping cart.</h3>
 		</div>
 		`;
 	}
@@ -40,6 +39,7 @@ async function getImageFromApi(items) {
 		});
 
 		return itemsWithImage.map((item) => createItem(item));
+
 	} catch (e) {
 		console.log(e);
 	}

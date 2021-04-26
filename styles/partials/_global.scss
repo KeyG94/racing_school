@@ -1,7 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: content-box;
+}
+
 .content-wrap{
     max-width: 1440px;
 }
 
 a{
     cursor: pointer;
+}
+
+li{
+    list-style-type: none;
+}
+
+#text{
+    display: none;
 }

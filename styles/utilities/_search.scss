@@ -1,12 +1,23 @@
 .search-box :is(input){
     background: none;
     padding: 0 7px;
-    margin-top: 2em;
     width: 250px;
     font-size: 20px;
     border-bottom: 2px solid $secondary-color;
 
     &:active, &:hover, &:focus{
         outline: none;
+    }
+}
+
+#search {
+    background: none;
+    padding: 0 7px;
+    width: 250px;
+    font-size: 20px;
+
+    @media screen and (max-width: 620px) {
+        background-color: $primary-color;
+        color: white;
     }
 }

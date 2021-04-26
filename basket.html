@@ -14,11 +14,11 @@
         <!--Unique height limit because of the global style-->
         <header class="flex justify-center max-h-32">
             <!--Navigation-->
-            <nav class="nav p-5 relative">
-                <ul class="flex justify-center">
-                    <li class="line p-2 mr-1"><a href="./index.html">Home</a></li>
-                    <li class="line p-2 ml-1"><a href="./products.html" class="">Products</a></li> 
-                    <li class="line p-2 ml-1"><a href="#" class="active">Basket</a></li> 
+            <nav class="nav p-2 sm:p-3 md:p-5 relative">
+                <ul class="flex flex-col sm:flex-row sm:justify-center">
+                    <li class="line pr-1 pl-1 sm:p-2 mr-1"><a href="./index.html">Home</a></li>
+                    <li class="line p-1 sm:p-2 mr-1"><a href="./products.html" class="">Products</a></li> 
+                    <li class="line p-1 sm:p-2 mr-1"><a href="#" class="active">Basket</a></li> 
                 </ul>
             </nav>
             <!--login, user-->
@@ -52,5 +52,6 @@
         </main>
     </div>
     <script src="./script/components/loadShoppingCart.js" type="module"></script>
+    <script src="./script/utills/navbarScroll.js"></script>
 </body>
 </html>

@@ -12,18 +12,15 @@
 <body>
     <div class="content-wrap ml-auto mr-auto">
         <!--Unique height limit because of the global style-->
-        <header class="flex justify-center max-h-32">
+        <header class="flex justify-center max-h-32 relative">
             <!--Navigation-->
-            <nav class="nav p-5">
+            <nav class="nav p-2 sm:p-3 md:p-5">
                 <ul class="flex flex-col sm:flex-row sm:justify-center">
                     <li class="line p-1 sm:p-2 mr-1"><a href="./index.html">Home</a></li>
                     <li class="line p-1 sm:p-2 mr-1"><a href="#" class="active">Products</a></li>
                     <li class="line p-1 sm:p-2 mr-1"><a href="./basket.html" class="">Basket</a></li>
                 </ul>
                 <!--SearchBox-->
-                <div class="search-box">
-                    <input type="search" name="productSearch" id="search" placeholder="Search...">
-                </div>
             </nav>
             <!--login, user-->
             <div class="profile absolute top-5 right-5">
@@ -33,9 +30,15 @@
         </header>
         <!--List of products-->
         <main>
-            <div class="root-products flex flex-wrap justify-center mt-14 ml-14 sm:ml-2 mr-20 sm:mr-2"></div>
+            <div class="search-box flex justify-center">
+                <input type="search" name="productSearch" id="search" placeholder="Search...">
+            </div>
+            <div class="root-products flex flex-wrap justify-center mt-14 ml-14 sm:ml-2 mr-20 sm:mr-2">
+                <div class="spinner"><div></div><div></div><div></div><div></div></div>
+            </div>
         </main>
     </div>
     <script src="script/scriptProducts.js" type="module"></script>
+    <script src="script/utills/navbarScroll.js"></script>
 </body>
 </html>
