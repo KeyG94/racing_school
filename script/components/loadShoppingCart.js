@@ -54,7 +54,7 @@ const createItem = (item) => {
 			<div class="img-overlay"><a href="${'productDetail.html'}?id=${item.id}" target="_blank"<i class="fas fa-eye"></i></a></div>
 		</div>
 			<div class="card-title ml-1 w-28 flex flex-col justify-between">
-				<h4>${item.title}</h4>
+				<h4 class="mb-1">${item.title}</h4>
 				<a href="${'productDetail.html'}?id=${item.id}" target="_blank" class="hover:text-gray-500">Read More</a>
 			</div>
 		</div>

@@ -39,3 +39,28 @@ nav{
           }
     }
 }
+
+.logo{
+    border-radius: 0 0 25px 25px;
+    span{
+        border-bottom: 2px solid $secondary-color;
+        &:hover{
+            border: none;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 3px;
+            left: 50%;
+            bottom: 5px;
+            background-color: $secondary-color;
+            transition: all ease-in-out .4s;
+            
+        }
+        &:hover::after{
+            width: 100%;
+            left: 0;
+          }
+    }
+}

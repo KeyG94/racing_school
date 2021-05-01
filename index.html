@@ -14,32 +14,38 @@
         <!-- api hero goes here...  -->
     </div>
     <div class="content-wrap ml-auto mr-auto">
-        <header class="flex justify-center">
-            <!--Navigation-->
-            <nav class="nav p-2 sm:p-3 md:p-5">
-                <ul class="flex flex-col sm:flex-row sm:justify-center">
-                    <li class="line pr-1 pl-1 sm:p-2 ml-1 sm: ml-0mr-1"><a href="#" class="active">Home</a></li>
-                    <li class="line p-1 sm:p-2 ml-1"><a href="./products.html" class="">Products</a></li> 
-                    <li class="line p-1 sm:p-2 ml-1"><a href="./basket.html" class="">Basket</a></li> 
-                </ul>
-            </nav>
-            <!--login, user-->
-            <div class="profile absolute top-5 right-5">
-                <img src="./images/placeholder/profile-placeholder.png" class="profile-img" id="profile-img" alt="profile image">
-                <div id="admin-nav" class="text-center cursor-pointer"></div>
-            </div>
-            <!--logo-->
-            <div class="punchline">
-                <h1 class="text-center text-4xl sm:text-8xl">78 Racing School</h1>
-                <h4 class="text-center text-lg sm:text-4xl">"Perfoming when it counts"</h4>
-            </div>
-            <!--Direction arrows-->
-            <div class="arrow">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </header>
+        <div class="logo hidden fixed z-10 h-10 md:block md:text-sm">
+            <a href="./index.html" class="p-5"><span>78 Racing School</span></a>
+        </div>
+        <div class="logo block fixed z-10 h-10 md:hidden">
+            <a href="./index.html" class="p-5"><span>78RS</span></a>
+    </div>
+    <header class="flex justify-center">
+        <!--Navigation-->
+        <nav class="nav p-2 sm:p-3 md:p-5">
+            <ul class="flex flex-col sm:flex-row sm:justify-center">
+                <li class="line pr-1 pl-1 sm:p-2 ml-1 sm: ml-0mr-1"><a href="#" class="active">Home</a></li>
+                <li class="line p-1 sm:p-2 ml-1"><a href="./products.html" class="">Products</a></li> 
+                <li class="line p-1 sm:p-2 ml-1"><a href="./basket.html" class="">Basket</a></li> 
+            </ul>
+        </nav>
+        <!--login, user-->
+        <div class="profile absolute top-5 right-5">
+            <img src="./images/placeholder/profile-placeholder.png" class="profile-img" id="profile-img" alt="profile image">
+            <div id="admin-nav" class="text-center cursor-pointer"></div>
+        </div>
+        <!--logo-->
+        <div class="punchline">
+            <h1 class="text-center text-4xl sm:text-8xl">78 Racing School</h1>
+            <h4 class="text-center text-lg sm:text-4xl">"Perfoming when it counts"</h4>
+        </div>
+        <!--Direction arrows-->
+        <div class="arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
         <main>
             <h2 class="text-center">Feautured</h2>
             <div class="flex flex-wrap sm:flex-row justify-center mt-14 ml-14 sm:ml-2 mr-20 sm:mr-2 root-index-2"></div>

@@ -11,7 +11,7 @@ async function createProduct(info) {
 			<div class="product-image-container">
 				<a href="${'productDetail.html'}?id=${info.id}">
 					<img src="${info.image.url}" alt="${info.image.alternativeText} class="object-cover w-full h-48">
-					<div class="img-overlay">Select</div>
+					<div class="img-overlay"><span>Select</span></div>
 				</a>
 			</div>
 			<a href="${'productDetail.html'}?id=${info.id}"><h4 class="h-20 mt-2 p-1">${info.title}</h4></a>
